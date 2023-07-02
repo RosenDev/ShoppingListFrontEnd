@@ -1,0 +1,20 @@
+<p-table [value]="categories" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+    <tr>
+      <th style="width: 25%">Category Name</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-category>
+    <tr>
+      <td>{{ category.name }}</td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="empty"> No Data </ng-template>
+  <ng-template pTemplate="footer">
+    <p-paginator
+      [totalRecords]="totalRecords"
+      [first]="paging.page"
+      [rows]="paging.size"
+      (onPageChange)="onPageChange($event)"></p-paginator>
+  </ng-template>
+</p-table>
