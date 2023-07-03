@@ -1,9 +1,9 @@
 export const environment = {
-  baseUrl: 'https://localhost:59197/api',
+  baseUrl: '',
   msalConfiguration: {
     clientId: '',
     authority: 'https://login.microsoftonline.com/common',
     redirectUri: 'http://localhost:4200/',
-    apiUrl: 'https://localhost:59197',
+    apiUrl: '',
   },
 };

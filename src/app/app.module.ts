@@ -28,6 +28,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { RefreshComponent } from './refresh/refresh.component';
 import { UserModule } from './user/user.module';
 import { ProductCategoryModule } from './product-category/product-category.module';
+import { ProductModule } from './product/product.module';
+import { ProductListModule } from './product-list/product-list.module';
 
 const isIE =
   window.navigator.userAgent.indexOf('MSIE ') > -1 ||
@@ -90,6 +92,8 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     MsalModule,
     UserModule,
     ProductCategoryModule,
+    ProductModule,
+    ProductListModule,
   ],
   providers: [
     {
