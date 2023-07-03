@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductCategoryModel } from 'src/app/model/product-category/product-category.model';
 import { MsalService } from '@azure/msal-angular';
 import { ProductCategoriesService } from 'src/app/service/product-categories.service';
-import { ProductCategoriesService } from 'src/app/service/product-categories.service';
 
 @Component({
   selector: 'app-product-category-list',
