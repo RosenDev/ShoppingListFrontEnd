@@ -34,16 +34,6 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  public deleteProduct(id: string): void {
-    this.productsService.deleteEntity(id).subscribe(() => {
-      this.router
-        .navigateByUrl('/refresh', { skipLocationChange: true })
-        .then(() => {
-          this.router.navigate(['/products']);
-        });
-    });
-  }
-
   public editProduct(id: number): void {
     this.router.navigate(['edit', id], { relativeTo: this.route });
   }

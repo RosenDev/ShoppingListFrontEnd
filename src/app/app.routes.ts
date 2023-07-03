@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { authenticatedChildGuard } from './guards/authenticated-child.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { RefreshComponent } from './refresh/refresh.component';
 import { productCategoryRoutes } from './product-category/product-category.routes';
 import { userRoutes } from './user/user.routes';
 import { productRoutes } from './product/product.routes';
@@ -39,9 +38,5 @@ export const routes: Routes = [
   {
     path: 'not-found',
     component: PageNotFoundComponent,
-  },
-  {
-    path: 'refresh',
-    component: RefreshComponent,
   },
 ];

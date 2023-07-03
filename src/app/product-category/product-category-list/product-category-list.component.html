@@ -4,9 +4,19 @@
   </button>
 </div>
 
+<div class="col-12">
+  <button pButton class="btn btn-primary" (click)="createCategory()">
+    Create
+  </button>
+</div>
+
 <p-table [value]="categories" [tableStyle]="{ 'min-width': '50rem' }">
   <ng-template pTemplate="header">
     <tr>
+      <th style="width: 25%">Id</th>
+
+      <th style="width: 25%">Name</th>
+      <th style="width: 25%">Actions</th>
       <th style="width: 25%">Id</th>
 
       <th style="width: 25%">Name</th>
@@ -16,18 +26,14 @@
   <ng-template pTemplate="body" let-category>
     <tr>
       <td>{{ category.id }}</td>
+      <td>{{ category.id }}</td>
       <td>{{ category.name }}</td>
       <td>
         <button
           (click)="editCategory(category.id)"
           pButton
           class="p-button-primary">
-          Edit</button
-        ><button
-          (click)="deleteCategory(category.id)"
-          pButton
-          class="p-button-primary">
-          Delete
+          Edit
         </button>
       </td>
     </tr>
