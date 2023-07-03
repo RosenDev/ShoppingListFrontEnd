@@ -1,7 +1,7 @@
 # Shoppinglist
 
 ## Setup
-Place your application client id in the msalConfigurarion section in encironment.development.ts
+Place the required configurations in encironment.development.ts
 
 ## Development server
 
