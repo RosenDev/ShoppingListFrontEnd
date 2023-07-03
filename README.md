@@ -1,7 +1,7 @@
 # Shoppinglist
 
 ## Setup
-Place the required configurations in encironment.development.ts
+Place the required configurations in environment.development.ts
 
 ## Development server
 
