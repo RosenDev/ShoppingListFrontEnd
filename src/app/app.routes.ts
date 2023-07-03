@@ -4,11 +4,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { RefreshComponent } from './refresh/refresh.component';
 import { productCategoryRoutes } from './product-category/product-category.routes';
 import { userRoutes } from './user/user.routes';
+import { productRoutes } from './product/product.routes';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/product-categories',
+    redirectTo: '/products',
     pathMatch: 'full',
   },
   {
@@ -16,11 +17,11 @@ export const routes: Routes = [
     children: productCategoryRoutes,
     canActivateChild: [authenticatedChildGuard],
   },
-  // {
-  //   path: 'products',
-  //   children: productRoutes,
-  //   canActivateChild: [authenticatedChildGuard],
-  // },
+  {
+    path: 'products',
+    children: productRoutes,
+    canActivateChild: [authenticatedChildGuard],
+  },
   // {
   //   path: 'product-lists',
   //   children: productListRoutes,

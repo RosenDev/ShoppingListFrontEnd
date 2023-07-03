@@ -1,7 +1,11 @@
 <div class="card">
   <p-menubar [model]="items">
-    <ng-template pTemplate="end" *ngIf="loginDisplay">
-      <button pButton class="btn btn-secondary" (click)="logout()">
+    <ng-template pTemplate="end">
+      <button
+        pButton
+        class="btn btn-secondary"
+        *ngIf="loginDisplay"
+        (click)="logout()">
         Logout
       </button>
     </ng-template>

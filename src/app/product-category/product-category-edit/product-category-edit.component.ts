@@ -28,9 +28,6 @@ export class ProductCategoryEditComponent implements OnInit {
   ) {
     this.productCategoryForm = this.formBuilder.group({
       name: new FormControl('', [Validators.required]),
-      isPublic: new FormControl(false, [Validators.required]),
-      trackIds: new FormControl('', [Validators.required]),
-      albumId: new FormControl('', [Validators.required]),
     });
   }
 
@@ -63,7 +60,7 @@ export class ProductCategoryEditComponent implements OnInit {
         .createCategory(categoryModel)
         .subscribe(success => {
           if (success.result) {
-            this.router.navigate(['categories']);
+            this.router.navigate(['product-categories']);
           }
         });
     } else {
@@ -78,7 +75,7 @@ export class ProductCategoryEditComponent implements OnInit {
         .updateCategory(categoryModel)
         .subscribe(success => {
           if (success.result) {
-            this.router.navigate(['categories']);
+            this.router.navigate(['product-categories']);
           }
         });
     }

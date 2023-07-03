@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
 import { MenubarModule } from 'primeng/menubar';
 import { TableModule } from 'primeng/table';
 import { PaginatorModule } from 'primeng/paginator';
+import { InputTextModule } from 'primeng/inputtext';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   imports: [
@@ -27,6 +29,8 @@ import { PaginatorModule } from 'primeng/paginator';
     MenubarModule,
     TableModule,
     PaginatorModule,
+    InputTextModule,
+    DropdownModule,
   ],
   exports: [
     FormsModule,
@@ -42,6 +46,8 @@ import { PaginatorModule } from 'primeng/paginator';
     MenubarModule,
     TableModule,
     PaginatorModule,
+    InputTextModule,
+    DropdownModule,
   ],
 })
 export class SharedModule {}

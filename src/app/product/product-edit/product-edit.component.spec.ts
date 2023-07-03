@@ -1,14 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductCategoryEditComponent } from './product-category-edit.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ServiceModule } from 'src/app/service/service.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductEditComponent } from './product-edit.component';
 
-xdescribe('ProductCategoryEditComponent', () => {
-  let component: ProductCategoryEditComponent;
-  let fixture: ComponentFixture<ProductCategoryEditComponent>;
+describe('ProductEditComponent', () => {
+  let component: ProductEditComponent;
+  let fixture: ComponentFixture<ProductEditComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -19,9 +19,9 @@ xdescribe('ProductCategoryEditComponent', () => {
         FormsModule,
         ReactiveFormsModule,
       ],
-      declarations: [ProductCategoryEditComponent],
+      declarations: [ProductEditComponent],
     });
-    fixture = TestBed.createComponent(ProductCategoryEditComponent);
+    fixture = TestBed.createComponent(ProductEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

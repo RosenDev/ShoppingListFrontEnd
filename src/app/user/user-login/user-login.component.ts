@@ -15,6 +15,7 @@ import {
   EventType,
 } from '@azure/msal-browser';
 import { Subject, filter } from 'rxjs';
+import { UsersService } from 'src/app/service/users.service';
 
 @Component({
   selector: 'app-user-login',
@@ -29,6 +30,7 @@ export class UserLoginComponent implements OnInit, OnDestroy {
     @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration,
     private authService: MsalService,
     private msalBroadcastService: MsalBroadcastService,
+    private usersService: UsersService,
     private router: Router
   ) {}
 

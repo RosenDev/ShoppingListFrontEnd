@@ -16,7 +16,16 @@ import { Subject, filter, takeUntil } from 'rxjs';
 export class AppComponent implements OnInit {
   title = 'Shopping List';
   public loginDisplay = false;
-  public items: MenuItem[] = [];
+  public items: MenuItem[] = [
+    {
+      label: 'Shopping List',
+      routerLink: ['/'],
+    },
+    {
+      label: 'Home',
+      routerLink: ['/'],
+    },
+  ];
   private readonly _destroying$ = new Subject<void>();
 
   constructor(
@@ -40,6 +49,20 @@ export class AppComponent implements OnInit {
       .subscribe(() => {
         this.loginDisplay =
           this.authService.instance.getActiveAccount() !== null;
+
+        if (this.loginDisplay) {
+          this.items = [
+            ...this.items,
+            {
+              label: 'Categories',
+              routerLink: 'product-categories',
+            },
+            {
+              label: 'Products',
+              routerLink: 'products',
+            },
+          ];
+        }
       });
   }
 

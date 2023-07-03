@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../../service/products.service';
 import { Paging } from '../../model/paging.model';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductCategoryModel } from 'src/app/model/product-category/product-category.model';
 import { MsalService } from '@azure/msal-angular';
-import { ProductCategoriesService } from 'src/app/service/product-categories.service';
+import { ProductModel } from 'src/app/model/product/product.model';
 
 @Component({
-  selector: 'app-product-category-list',
-  templateUrl: './product-category-list.component.html',
+  selector: 'app-product-list-list',
+  templateUrl: './product-list-list.component.html',
 })
-export class ProductCategoryListComponent implements OnInit {
-  public categories: ProductCategoryModel[] = [];
+export class ProductListListComponent implements OnInit {
+  public products: ProductModel[] = [];
   public paging: Paging = { page: 0, size: 10 };
   public totalRecords = 0;
 
   constructor(
-    private categoriesService: ProductCategoriesService,
+    private productsService: ProductsService,
     private authService: MsalService,
     private router: Router,
     private route: ActivatedRoute
@@ -23,39 +23,39 @@ export class ProductCategoryListComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.initialize().subscribe(() => {
-      this.categoriesService.listEntites(this.paging).subscribe(response => {
+      this.productsService.listEntites(this.paging).subscribe(response => {
         if (!response) {
           return;
         }
 
-        this.categories = response.result;
+        this.products = response.result;
         this.totalRecords = response.totalRecords;
       });
     });
   }
 
-  public deleteCategory(id: string): void {
-    this.categoriesService.deleteEntity(id).subscribe(() => {
+  public deleteProduct(id: string): void {
+    this.productsService.deleteEntity(id).subscribe(() => {
       this.router
         .navigateByUrl('/refresh', { skipLocationChange: true })
         .then(() => {
-          this.router.navigate(['/product-categories']);
+          this.router.navigate(['/products']);
         });
     });
   }
 
-  public editCategory(id: string): void {
+  public editProduct(id: number): void {
     this.router.navigate(['edit', id], { relativeTo: this.route });
   }
 
-  public createCategory(): void {
+  public createProduct(): void {
     this.router.navigate(['create'], { relativeTo: this.route });
   }
 
   public onPageChange(event: any) {
     this.paging = { page: Number(event.page), size: Number(event.rows) };
-    this.categoriesService.listEntites(this.paging).subscribe(x => {
-      this.categories = [...x.result];
+    this.productsService.listEntites(this.paging).subscribe(x => {
+      this.products = [...x.result];
       this.totalRecords = x.totalRecords;
     });
   }
