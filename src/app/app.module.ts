@@ -25,11 +25,9 @@ import { environment } from 'src/environments/environment';
 import { SharedModule } from './shared.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { RefreshComponent } from './refresh/refresh.component';
 import { UserModule } from './user/user.module';
 import { ProductCategoryModule } from './product-category/product-category.module';
 import { ProductModule } from './product/product.module';
-import { ProductListModule } from './product-list/product-list.module';
 
 const isIE =
   window.navigator.userAgent.indexOf('MSIE ') > -1 ||
@@ -85,7 +83,7 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
 }
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent, RefreshComponent],
+  declarations: [AppComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
     SharedModule,
@@ -93,7 +91,6 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     UserModule,
     ProductCategoryModule,
     ProductModule,
-    ProductListModule,
   ],
   providers: [
     {
